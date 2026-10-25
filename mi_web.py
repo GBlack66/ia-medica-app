@@ -5,7 +5,7 @@ import io
 
 # 1. Configuración de la página
 st.set_page_config(page_title="IA Médica", layout="wide")
-st.title("📚 Mi Cuaderno Médico (Estilo NotebookLM)")
+st.title("📚 Mi Cuaderno Médico")
 
 # 2. Inicializar variables de memoria
 if "cliente" not in st.session_state:
@@ -102,7 +102,7 @@ if st.session_state.mostrar_config_presentacion:
                 st.session_state.mensajes_visuales.append({"rol": "user", "texto": "Genera una presentación con mis configuraciones."})
                 try:
                     respuesta = st.session_state.cliente.models.generate_content(
-                        model='gemini-2.5-flash',
+                        model='gemini-3.8-flash',
                         contents=prompt_presentacion
                     )
                     st.session_state.mensajes_visuales.append({"rol": "assistant", "texto": respuesta.text})
