@@ -65,7 +65,7 @@ if prompt_rapido:
     st.session_state.mensajes_visuales.append({"rol": "user", "texto": texto_usuario_rapido})
     try:
         respuesta = st.session_state.cliente.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.8-flash',
             contents=prompt_rapido
         )
         st.session_state.mensajes_visuales.append({"rol": "assistant", "texto": respuesta.text})
