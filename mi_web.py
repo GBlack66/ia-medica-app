@@ -36,7 +36,6 @@ if archivos_subidos:
 st.write("### Generador de Material")
 col1, col2, col3, col4 = st.columns(4)
 
-# Variable para atrapar la acción de los botones rápidos
 prompt_rapido = None
 texto_usuario_rapido = ""
 
@@ -130,7 +129,7 @@ if pregunta_usuario:
     try:
         with st.chat_message("assistant"):
             respuesta = st.session_state.cliente.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.8-flash',
                 contents=contexto + pregunta_usuario
             )
             st.markdown(respuesta.text)
